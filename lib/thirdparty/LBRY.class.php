@@ -25,6 +25,22 @@ class LBRY
     ]), ['json_response' => true]);
     }
 
+    public static function editEmailSettings($token, $email, $isPrimary =null, $isEnabled = null)
+    {
+        return Curl::post(static::getApiUrl('/user/email/edit'),['auth_token' => $token],['email' => $email],['is_primary' => $isPrimary],['is_enabled' => $isEnabled]);
+    }
+
+    public static function emailStatus($token)
+    {
+        list($status, $headers, $body) = Curl::doCurl(Curl::POST, static::getApiUrl('/user/email/status'),['auth_token' => $token], ['json_response' => true]);
+        return array($status,$headers,$body);
+    }
+
+    public static function applyTags($type, $token, $tags)
+    {
+        return Curl::post(static::getApiUrl('/user/tag/edit'),['auth_token' => $token],[$type => $tags]);
+    }
+
     public static function unsubscribe($email)
     {
         return Curl::post(static::getApiUrl('/list/unsubscribe'), ['email' => $email], ['json_response' => true]);

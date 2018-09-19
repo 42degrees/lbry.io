@@ -7,7 +7,7 @@
     <div class="hero-content-wrapper">
       <div class="hero-content text-center">
         <h1 class="cover-title">{{page.team.header}}</h1>
-        <h2 class="cover-subtitle">Team work makes the dream work.</h2>
+        <h2 class="cover-subtitle">Teamwork makes the dream work.</h2>
       </div>
     </div>
   </div>
@@ -24,17 +24,17 @@
     <?php endforeach ?>
     <h2>Technical</h2>
     <?php foreach ([ 'kay-kurokawa', 'jack-robison', 'lex-berezhny',
-                    'akinwale-ariwodola', 'sean-yesmunt', 'bill-bittner', 'amit-tulshyan', 'mark-beamer'] as $bioSlug): ?>
+                    'akinwale-ariwodola', 'sean-yesmunt', 'amit-tulshyan', 'mark-beamer'] as $bioSlug): ?>
       <div class="spacer2">
         <?php echo View::render('content/_bio', ['person' => $bioSlug]) ?>
       </div>
     <?php endforeach ?>
     <h2>Business</h2>
     <?php foreach (['josh-finer',
-                    'reilly-smith',
                     'tom-zarebczan',
                     'brinck-slattery',
-                    'rob-smith'] as $bioSlug): ?>
+                    'rob-smith',
+                    'james-biller'] as $bioSlug): ?>
       <div class="spacer2">
         <?php echo View::render('content/_bio', ['person' => $bioSlug]) ?>
       </div>
